@@ -1,0 +1,26 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "build": "lerna run build --stream --loglevel silent",
+    "web": "cd next-for-native && yarn start",
+    "native": "cd expo-for-native && yarn ios"
+  },
+  "workspaces": [
+    "expo-for-native/",
+    "next-for-native/"
+  ],
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native": "0.71.7",
+    "react-native-web": "~0.18.10"
+  },
+  "devDependencies": {
+    "@types/node": "18.16.3",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.0",
+    "lerna": "^6.6.1",
+    "typescript": "^4.9.4"
+  }
+}

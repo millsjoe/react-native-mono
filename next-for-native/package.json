@@ -1,0 +1,23 @@
+{
+  "name": "next-for-native",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "next dev",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "build": "next build"
+  },
+  "dependencies": {
+    "app": "link:../expo-for-native",
+    "eslint": "8.39.0",
+    "eslint-config-next": "13.3.4",
+    "next": "13.3.4",
+    "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@expo/next-adapter": "^5.0.2"
+  }
+}
