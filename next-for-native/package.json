@@ -10,7 +10,7 @@
     "build": "next build"
   },
   "dependencies": {
-    "app": "link:../expo-for-native",
+    "new-ui": "link:../packages/new-ui",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.4",
     "next": "13.3.4",

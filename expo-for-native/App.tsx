@@ -1,20 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
+import VanillaUI from "new-ui"
+import { View, Text, StyleSheet } from "react-native"
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>I LOVE PRIZE MACGIUNE!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <VanillaUI /> // This doesnt work even though its the exact same....
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

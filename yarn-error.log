@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/joe.mills/.nvm/versions/node/v18.0.0/bin/node /opt/homebrew/Cellar/yarn/1.22.19/libexec/bin/yarn.js add -D expo-module-core -W
+  /Users/joe.mills/.nvm/versions/node/v18.0.0/bin/node /opt/homebrew/Cellar/yarn/1.22.19/libexec/bin/yarn.js
 
 PATH: 
   /Users/joe.mills/.nvm/versions/node/v18.0.0/bin:/Users/joe.mills/dev/tokenfetcher:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/joe.mills/.nvm/versions/node/v18.0.0/bin:/Users/joe.mills/dev/tokenfetcher:/opt/homebrew/bin:/opt/homebrew/sbin
@@ -14,17 +14,12 @@ Platform:
   darwin arm64
 
 Trace: 
-  Error: https://artifactory.euw.platformservices.io/artifactory/api/npm/sbg-npm/expo-module-core: not_found
-      at params.callback [as _callback] (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:66145:18)
-      at self.callback (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:140890:22)
-      at Request.emit (node:events:527:28)
-      at Request.<anonymous> (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:141862:10)
-      at Request.emit (node:events:527:28)
-      at Gunzip.<anonymous> (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:141784:12)
-      at Object.onceWrapper (node:events:641:28)
-      at Gunzip.emit (node:events:527:28)
-      at endReadableNT (node:internal/streams/readable:1344:12)
-      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+  SyntaxError: /Users/joe.mills/dev/react-native/expo-for-native/package.json: Unexpected token } in JSON at position 392
+      at JSON.parse (<anonymous>)
+      at /opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:310:30)
+      at /opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:321:13
 
 npm manifest: 
   {
@@ -33,14 +28,26 @@ npm manifest:
     "scripts": {
       "build": "lerna run build --stream --loglevel silent",
       "web": "cd next-for-native && yarn start",
-      "native": "cd expo-for-native && yarn ios"
+      "native": "cd expo-for-native && yarn ios",
+      "clean": "rm -r node_modules/ && rm -r packages/*/node_modules/ && rm -r */node_modules"
     },
     "workspaces": [
       "expo-for-native/",
-      "next-for-native/"
+      "next-for-native/",
+      "packages/new-ui"
     ],
+    "dependencies": {
+      "react": "18.2.0",
+      "react-dom": "18.2.0",
+      "react-native": "0.71.7",
+      "react-native-web": "~0.18.10"
+    },
     "devDependencies": {
-      "lerna": "^6.6.1"
+      "@types/node": "18.16.3",
+      "@types/react": "18.2.0",
+      "@types/react-dom": "18.2.0",
+      "lerna": "^6.6.1",
+      "typescript": "^4.9.4"
     }
   }
 
@@ -2807,14 +2814,21 @@ Lockfile:
     resolved "https://artifactory.euw.platformservices.io/artifactory/api/npm/sbg-npm/@types/range-parser/-/range-parser-1.2.4.tgz#cd667bcfdd025213aafb7ca5915a932590acdcdc"
     integrity sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==
   
-  "@types/react-dom@18.2.3":
-    version "18.2.3"
-    resolved "https://artifactory.euw.platformservices.io/artifactory/api/npm/sbg-npm/@types/react-dom/-/react-dom-18.2.3.tgz#2fe492bb0e67047b7b43e18166d8f50d44e0525e"
-    integrity sha512-hxXEXWxFJXbY0LMj/T69mznqOZJXNtQMqVxIiirVAZnnpeYiD4zt+lPsgcr/cfWg2VLsxZ1y26vigG03prYB+Q==
+  "@types/react-dom@18.2.0":
+    version "18.2.0"
+    resolved "https://artifactory.euw.platformservices.io/artifactory/api/npm/sbg-npm/@types/react-dom/-/react-dom-18.2.0.tgz#374f28074bb117f56f58c4f3f71753bebb545156"
+    integrity sha512-8yQrvS6sMpSwIovhPOwfyNf2Wz6v/B62LFSVYQ85+Rq3tLsBIG7rP5geMxaijTUxSkrO6RzN/IRuIAADYQsleA==
     dependencies:
       "@types/react" "*"
   
-  "@types/react@*", "@types/react@18.2.4":
+  "@types/react-native@~0.70.6":
+    version "0.70.13"
+    resolved "https://artifactory.euw.platformservices.io/artifactory/api/npm/sbg-npm/@types/react-native/-/react-native-0.70.13.tgz#a38a1378e68dc25fe5911b09c49b8afffe191316"
+    integrity sha512-VnC/ny8Eynk3fvY4cnNKXpo/0zUhA2gO64RX51yzVofblOP6TR6jciga0kIjI4c+2eUyWNGrahmiolNm+QU6Cw==
+    dependencies:
+      "@types/react" "*"
+  
+  "@types/react@*":
     version "18.2.4"
     resolved "https://artifactory.euw.platformservices.io/artifactory/api/npm/sbg-npm/@types/react/-/react-18.2.4.tgz#970e6d56f6d3fd8bd2cb1d1f042aef1d0426d08e"
     integrity sha512-IvAIhJTmKAAJmCIcaa6+5uagjyh+9GvcJ/thPZcw+i+vx+22eHlTy2Q1bJg/prES57jehjebq9DnIhOTtIhmLw==
@@ -2823,10 +2837,10 @@ Lockfile:
       "@types/scheduler" "*"
       csstype "^3.0.2"
   
-  "@types/react@~18.0.14":
-    version "18.0.38"
-    resolved "https://artifactory.euw.platformservices.io/artifactory/api/npm/sbg-npm/@types/react/-/react-18.0.38.tgz#02a23bef8848b360a0d1dceef4432c15c21c600c"
-    integrity sha512-ExsidLLSzYj4cvaQjGnQCk4HFfVT9+EZ9XZsQ8Hsrcn8QNgXtpZ3m9vSIC2MWtx7jHictK6wYhQgGh6ic58oOw==
+  "@types/react@18.2.0":
+    version "18.2.0"
+    resolved "https://artifactory.euw.platformservices.io/artifactory/api/npm/sbg-npm/@types/react/-/react-18.2.0.tgz#15cda145354accfc09a18d2f2305f9fc099ada21"
+    integrity sha512-0FLj93y5USLHdnhIhABk83rm8XEGA7kH3cr+YUlvxoUGp1xNt/DINUMvqPxLyOQMzLmZe8i4RTHbvb8MC7NmrA==
     dependencies:
       "@types/prop-types" "*"
       "@types/scheduler" "*"
@@ -3347,10 +3361,6 @@ Lockfile:
     dependencies:
       normalize-path "^3.0.0"
       picomatch "^2.0.4"
-  
-  "app@link:expo-for-native":
-    version "0.0.0"
-    uid ""
   
   appdirsjs@^1.2.4:
     version "1.2.7"
@@ -9241,6 +9251,12 @@ Lockfile:
     resolved "https://artifactory.euw.platformservices.io/artifactory/api/npm/sbg-npm/nested-error-stacks/-/nested-error-stacks-2.0.1.tgz#d2cc9fc5235ddb371fc44d506234339c8e4b0a4b"
     integrity sha512-SrQrok4CATudVzBS7coSz26QRSmlK9TzzoFbeKfcPBUFPjcQM9Rqvr/DlJkOrwI/0KcgvMub1n1g5Jt9EgRn4A==
   
+  "new-ui@link:packages/new-ui":
+    version "1.0.0"
+    dependencies:
+      "@expo/webpack-config" "^18.0.4"
+      expo "~48.0.15"
+  
   next@13.3.4:
     version "13.3.4"
     resolved "https://artifactory.euw.platformservices.io/artifactory/api/npm/sbg-npm/next/-/next-13.3.4.tgz#ce2d96053cabfca092cc829941efe5dfbe015d16"
@@ -10858,7 +10874,7 @@ Lockfile:
       shell-quote "^1.6.1"
       ws "^7"
   
-  react-dom@^18.2.0:
+  react-dom@18.2.0:
     version "18.2.0"
     resolved "https://artifactory.euw.platformservices.io/artifactory/api/npm/sbg-npm/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"
     integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==

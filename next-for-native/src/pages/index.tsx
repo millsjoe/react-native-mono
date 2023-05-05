@@ -1,9 +1,9 @@
 
-import App from "app"
+import VanillaUI from "new-ui"
 export default function Home() {
   return (
     <div id="root">
-      <App />
+      <VanillaUI />
     </div>
   )
 }
