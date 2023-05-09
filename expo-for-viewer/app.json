@@ -1,8 +1,8 @@
 {
   "expo": {
     "entryPoint": "./index.ts",
-    "name": "expo-for-native",
-    "slug": "expo-for-native",
+    "name": "expo-for-viewer",
+    "slug": "expo-for-viewer",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

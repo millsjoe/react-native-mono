@@ -1,5 +1,5 @@
 {
-  "name": "expo-for-native",
+  "name": "expo-for-viewer",
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
